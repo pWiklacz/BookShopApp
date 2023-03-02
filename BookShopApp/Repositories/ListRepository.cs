@@ -6,10 +6,14 @@ internal class ListRepository<T> : IRepository<T> where T : class, IEntity, new(
 {
     private readonly List<T> _items = new();
 
+    public event EventHandler<T>? ItemAdded;
+    public event EventHandler<T>? ItemRemoved;
+
     public void Add(T item)
     {
         item.Id = _items.Count + 1;
         _items.Add(item);
+        ItemAdded?.Invoke(this, item);
     }
 
     public void Save()
@@ -22,7 +26,16 @@ internal class ListRepository<T> : IRepository<T> where T : class, IEntity, new(
         return _items.Single(item => item.Id == id);
     }
 
-    public void Remove(T item) => _items.Remove(item);
+    public List<T> Get_items()
+    {
+        return _items;
+    }
+
+    public void Remove(T item)
+    {
+        _items.Remove(item);
+        ItemRemoved?.Invoke(this, item);
+    }
 
     public IEnumerable<T> GetAll() => _items.ToList();
 
