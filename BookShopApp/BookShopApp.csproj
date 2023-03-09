@@ -14,7 +14,17 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="DataProviders\" />
+    <Folder Include="Components\CsvReader\Extensions\" />
+    <Folder Include="Components\DataProviders\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Resources\Files\Authors.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\Files\Books.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>

@@ -1,6 +1,6 @@
-﻿using BookShopApp.Entities;
+﻿using BookShopApp.Data.Entities;
 
-namespace BookShopApp.Repositories;
+namespace BookShopApp.Data.Repositories;
 
 public interface IRepository<T> : IReadRepository<T>, IWriteRepository<T>
     where T : class, IEntity

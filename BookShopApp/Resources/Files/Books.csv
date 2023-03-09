@@ -1,0 +1,107 @@
+Title,Author,BookType,Price,Number of pages
+The Lord of the Rings,J.R.R. Tolkien,HardCover,29.99,1178
+Harry Potter and the Philosopher's Stone,J.K. Rowling,SoftCover,14.99,332
+The Da Vinci Code,Dan Brown,EBook,12.99,592
+The Alchemist,Paulo Coelho,SoftCover,9.99,197
+The Hitchhiker's Guide to the Galaxy,Douglas Adams,AudioBook,19.99,216
+The Girl with the Dragon Tattoo,Stieg Larsson,HardCover,21.99,672
+Animal Farm,George Orwell,SoftCover,8.99,144
+The Hunger Games,Suzanne Collins,EBook,10.99,374
+The Diary of a Young Girl,Anne Frank,SoftCover,6.99,352
+The Shining,Stephen King,AudioBook,29.99,688
+The Picture of Dorian Gray,Oscar Wilde,HardCover,16.99,254
+The Great Expectations,Charles Dickens,SoftCover,11.99,528
+The Adventures of Huckleberry Finn,Mark Twain,SoftCover,9.99,366
+The War of the Worlds,H.G. Wells,EBook,7.99,192
+The Martian,Andy Weir,AudioBook,22.99,385
+The Chronicles of Narnia,C.S. Lewis,SoftCover,29.99,767
+A Game of Thrones,George R.R. Martin,HardCover,27.99,694
+The Handmaid's Tale,Margaret Atwood,SoftCover,13.99,324
+The Time Machine,H.G. Wells,EBook,5.99,118
+Little Women,Louisa May Alcott,SoftCover,10.99,560
+The Sun Also Rises,Ernest Hemingway,AudioBook,18.99,256
+Dracula,Bram Stoker,HardCover,18.99,418
+The Adventures of Sherlock Holmes,Arthur Conan Doyle,SoftCover,7.99,307
+The Count of Monte Cristo,Alexandre Dumas,SoftCover,16.99,1088
+The Canterbury Tales,Geoffrey Chaucer,EBook,3.99,504
+The Hitchhiker's Guide to the Galaxy,Douglas Adams,HardCover,29.99,240
+The Girl on the Train,Paula Hawkins,SoftCover,12.99,386
+The God of Small Things,Arundhati Roy,SoftCover,14.99,336
+The Secret History,Donna Tartt,AudioBook,25.99,576
+The Fault in Our Stars,John Green,SoftCover,9.99,318
+The Adventures of Tom Sawyer,Mark Twain,EBook,4.99,224
+Gone Girl,Gillian Flynn,HardCover,20.99,432
+The Joy Luck Club,Amy Tan,SoftCover,11.99,288
+The Girl Who Kicked the Hornet's Nest,Stieg Larsson,SoftCover,16.99,753
+The Hitchhiker's Guide to the Galaxy,Douglas Adams,EBook,6.99,216
+The Road,Cormac McCarthy,AudioBook,29.99,304
+The Divine Comedy,Dante Alighieri,HardCover,23.99,928
+The Fellowship of the Ring,J.R.R. Tolkien,SoftCover,12.99,398
+The Great Gatsby,F. Scott Fitzgerald,HardCover,19.99,218
+To Kill a Mockingbird,Harper Lee,SoftCover,12.99,324
+1984,George Orwell,EBook,9.99,328
+Pride and Prejudice,Jane Austen,SoftCover,7.99,432
+The Catcher in the Rye,J.D. Salinger,AudioBook,29.99,224
+Sense and Sensibility,Jane Austen,HardCover,15.99,352
+The Sound and the Fury,William Faulkner,SoftCover,11.99,326
+The Hobbit,J.R.R. Tolkien,AudioBook,21.99,304
+A Farewell to Arms,Ernest Hemingway,EBook,6.99,332
+The Great Gatsby,F. Scott Fitzgerald,SoftCover,10.99,240
+Wuthering Heights,Emily Bronte,HardCover,16.99,384
+Jane Eyre,Charlotte Bronte,SoftCover,8.99,532
+Animal Farm,George Orwell,SoftCover,8.99,144
+Lord of the Flies,William Golding,EBook,5.99,224
+The Catcher in the Rye,J.D. Salinger,HardCover,17.99,224
+Sense and Sensibility,Jane Austen,SoftCover,7.99,344
+The Sound and the Fury,William Faulkner,AudioBook,27.99,326
+The Hobbit,J.R.R. Tolkien,SoftCover,12.99,304
+A Farewell to Arms,Ernest Hemingway,HardCover,22.99,332
+The Great Gatsby,F. Scott Fitzgerald,EBook,8.99,218
+The Great Gatsby,F. Scott Fitzgerald,SoftCover,10.99,240
+To Kill a Mockingbird,Harper Lee,EBook,9.99,324
+1984,George Orwell,HardCover,16.99,328
+Pride and Prejudice,Jane Austen,AudioBook,19.99,432
+The Catcher in the Rye,J.D. Salinger,SoftCover,12.99,224
+Sense and Sensibility,Jane Austen,EBook,7.99,344
+The Sound and the Fury,William Faulkner,HardCover,21.99,326
+The Hobbit,J.R.R. Tolkien,SoftCover,12.99,304
+A Farewell to Arms,Ernest Hemingway,SoftCover,11.99,332
+The Great Gatsby,F. Scott Fitzgerald,AudioBook,29.99,218
+Wuthering Heights,Emily Bronte,EBook,6.99,384
+Jane Eyre,Charlotte Bronte,HardCover,15.99,532
+Animal Farm,George Orwell,SoftCover,8.99,144
+Lord of the Flies,William Golding,HardCover,18.99,224
+The Catcher in the Rye,J.D. Salinger,AudioBook,29.99,224
+Sense and Sensibility,Jane Austen,HardCover,16.99,352
+The Sound and the Fury,William Faulkner,SoftCover,11.99,326
+The Hobbit,J.R.R. Tolkien,AudioBook,21.99,304
+A Farewell to Arms,Ernest Hemingway,EBook,6.99,332
+The Great Gatsby,F. Scott Fitzgerald,SoftCover,10.99,240
+Harry Potter and the Philosopher's Stone,J.K. Rowling,HardCover,21.99,256
+Harry Potter and the Philosopher's Stone,J.K. Rowling,EBook,9.99,256
+Harry Potter and the Philosopher's Stone,J.K. Rowling,SoftCover,14.99,256
+Harry Potter and the Philosopher's Stone,J.K. Rowling,AudioBook,29.99,256
+Harry Potter and the Chamber of Secrets,J.K. Rowling,HardCover,22.99,384
+Harry Potter and the Chamber of Secrets,J.K. Rowling,EBook,9.99,384
+Harry Potter and the Chamber of Secrets,J.K. Rowling,SoftCover,15.99,384
+Harry Potter and the Chamber of Secrets,J.K. Rowling,AudioBook,34.99,384
+Harry Potter and the Prisoner of Azkaban,J.K. Rowling,HardCover,23.99,480
+Harry Potter and the Prisoner of Azkaban,J.K. Rowling,EBook,9.99,480
+Harry Potter and the Prisoner of Azkaban,J.K. Rowling,SoftCover,16.99,480
+Harry Potter and the Prisoner of Azkaban,J.K. Rowling,AudioBook,39.99,480
+Harry Potter and the Goblet of Fire,J.K. Rowling,HardCover,25.99,640
+Harry Potter and the Goblet of Fire,J.K. Rowling,EBook,9.99,640
+Harry Potter and the Goblet of Fire,J.K. Rowling,SoftCover,17.99,640
+Harry Potter and the Goblet of Fire,J.K. Rowling,AudioBook,49.99,640
+Harry Potter and the Order of Phoenix,J.K. Rowling,HardCover,26.99,896
+Harry Potter and the Order of Phoenix,J.K. Rowling,EBook,9.99,896
+Harry Potter and the Order of Phoenix,J.K. Rowling,SoftCover,18.99,896
+Harry Potter and the Order of Phoenix,J.K. Rowling,AudioBook,59.99,896
+Harry Potter and the Half-Blood Prince,J.K. Rowling,HardCover,27.99,672
+Harry Potter and the Half-Blood Prince,J.K. Rowling,EBook,9.99,672
+Harry Potter and the Half-Blood Prince,J.K. Rowling,SoftCover,19.99,672
+Harry Potter and the Half-Blood Prince,J.K. Rowling,AudioBook,44.99,672
+Harry Potter and the Deathly Hallows,J.K. Rowling,HardCover,28.99,784
+Harry Potter and the Deathly Hallows,J.K. Rowling,EBook,9.99,784
+Harry Potter and the Deathly Hallows,J.K. Rowling,SoftCover,20.99,784
+Harry Potter and the Deathly Hallows,J.K. Rowling,AudioBook,69.99,784

@@ -1,13 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
-using BookShopApp.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using BookShopApp.Data;
+﻿using BookShopApp.Data.Entities;
+using Microsoft.EntityFrameworkCore;
 
-namespace BookShopApp.Repositories;
+namespace BookShopApp.Data.Repositories;
 
 public class SqlRepository<T> : IRepository<T> where T : class, IEntity, new()
 {
@@ -18,7 +12,6 @@ public class SqlRepository<T> : IRepository<T> where T : class, IEntity, new()
     {
         _dbContext = dbContext;
         _dbSet = _dbContext.Set<T>();
-        //_dbContext.Database.EnsureCreated();
     }
 
     public event EventHandler<T>? ItemAdded;

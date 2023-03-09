@@ -1,4 +1,4 @@
-﻿namespace BookShopApp.Entities;
+﻿namespace BookShopApp.Data.Entities;
 
 public interface IEntity
 {

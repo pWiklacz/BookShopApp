@@ -1,20 +1,26 @@
-﻿using BookShopApp.Data;
-using BookShopApp.DataProviders;
-using BookShopApp.Entities;
-using BookShopApp.Repositories;
+﻿ using System.Diagnostics;
+ using System.Xml.Linq;
+ using BookShopApp.Components.CsvReader;
+ using BookShopApp.Components.DataProviders;
+using BookShopApp.Data.Entities;
+using BookShopApp.Data.Repositories;
 
 
-namespace BookShopApp;
+namespace BookShopApp.Application;
 
 public class UserCommunication : IUserCommunication
 {
     private readonly IRepository<Book> _repository;
     private readonly IBookProvider _bookProvider;
+    private readonly ICsvReader _csvReader;
+    private readonly IRepository<Author> _authorRepository;
 
-    public UserCommunication(IRepository<Book> repository, IBookProvider bookProvider)
+    public UserCommunication(IRepository<Book> repository, IBookProvider bookProvider, ICsvReader csvReader, IRepository<Author> authorRepository)
     {
         _repository = repository;
         _bookProvider = bookProvider;
+        _csvReader = csvReader;
+        _authorRepository = authorRepository;
     }
     public void MainMenu()
     {
@@ -27,7 +33,9 @@ public class UserCommunication : IUserCommunication
                 $"Welcome In BookShop Application!\n\n" +
                 "1. Add book\n" +
                 "2. Display available books\n" +
-                "3. Delete book\n\n" +
+                "3. Delete book\n" +
+                "4. Enter data from Csv file\n" +
+                "5. Save all existing books in XML file\n\n" +
                 "To end program press ESC!");
             switch (Console.ReadKey().Key)
             {
@@ -37,7 +45,7 @@ public class UserCommunication : IUserCommunication
                     AddItem(_repository, book);
                     break;
                 case ConsoleKey.D2:
-                    displayBookMenu(_repository);
+                    DisplayBookMenu(_repository);
                     break;
                 case ConsoleKey.D3:
                     Console.Clear();
@@ -51,6 +59,12 @@ public class UserCommunication : IUserCommunication
                         Console.WriteLine("Book with the given id does not exist!");
                     }
                     break;
+                case ConsoleKey.D4:
+                    DataFromCsv();
+                    break;
+                case ConsoleKey.D5:
+                    SaveToXml();
+                    break;
                 case ConsoleKey.Escape:
                     isRun = false;
                     break;
@@ -60,16 +74,99 @@ public class UserCommunication : IUserCommunication
                     break;
             }
 
-            if (isRun)
+            if (!isRun) continue;
+            Console.Write("Press <Enter> to continue... ");
+            while (Console.ReadKey().Key != ConsoleKey.Enter)
             {
-                Console.Write("Press <Enter> to continue... ");
-                while (Console.ReadKey().Key != ConsoleKey.Enter)
-                {
-                }
-
-                Console.Clear();
             }
+
+            Console.Clear();
         }
+    }
+
+    public void DataFromCsv()
+    {
+        var isRun = true;
+        while (isRun)
+        {
+            Console.Clear();
+            Console.WriteLine("What data will the file contain?\n" +
+                              "1. Books\n" +
+                              "2. Authors");
+            Console.WriteLine("Press ESC to back to menu.");
+
+            switch (Console.ReadKey().Key)
+            {
+                case ConsoleKey.D1:
+                    Console.Clear();
+                    Console.WriteLine("Enter file path: ");
+                    var path = Console.ReadLine();
+                    if (path != null
+                        && File.Exists(path))
+                    {
+                        var books = _csvReader.ProcessBooks(@path);
+                        foreach (var book in books)
+                        {
+                            AddItem(_repository,book);
+                        }
+                    }
+                    else
+                    {
+                        Console.Clear();
+                        Console.WriteLine("File doesn't exist!\n" +
+                                          "Please try again.");
+                    }
+                    break;
+                case ConsoleKey.D2:
+                    Console.Clear();
+                    Console.WriteLine("Enter file path: ");
+                    var path2 = Console.ReadLine();
+                    if (path2 != null
+                        && File.Exists(path2))
+                    {
+                        var authors = _csvReader.ProcessAuthor(@path2);
+                        foreach (var author in authors)
+                        {
+                            AddItem(_authorRepository, author);
+                        }
+                    }
+                    else
+                    {
+                        Console.Clear();
+                        Console.WriteLine("File doesn't exist!\n" +
+                                          "Please try again.");
+                    }
+                    break;
+                case ConsoleKey.Escape:
+                    isRun = false;
+                    break;
+            }
+
+            if (!isRun) continue;
+            Console.Write("Press <Enter> to continue... ");
+            while (Console.ReadKey().Key != ConsoleKey.Enter)
+            {
+            }
+
+            Console.Clear();
+        }
+    }
+
+    public void SaveToXml()
+    {
+        var books = _repository.GetAll().ToList();
+        if (books.Count == 0) return;
+        var document = new XDocument();
+        var bookElements = new XElement("Books", books
+            .Select(x => new XElement("Book",
+                new XAttribute("Title", x.Title!),
+                new XAttribute("Author", x.Author!),
+                new XAttribute("CoverType", x.BookType),
+                new XAttribute("Price", x.Price),
+                new XAttribute("NumberOfPages", x.NumberOfPages))));
+
+        document.Add(bookElements);
+        document.Save(@"Resources\Files\file.xml");
     }
 
     public void OnItemAdded(object? sender, Book e)
@@ -110,7 +207,7 @@ public class UserCommunication : IUserCommunication
         }
     }
 
-    public void displayBookMenu(IReadRepository<IEntity> repository)
+    public void DisplayBookMenu(IReadRepository<IEntity> repository)
     {
         var isRun = true;
         while (isRun)
@@ -141,7 +238,7 @@ public class UserCommunication : IUserCommunication
                     Console.Clear();
                     Console.WriteLine("Enter price: ");
                     var price = Console.ReadLine();
-                    if (Decimal.TryParse(price, out var d))
+                    if (decimal.TryParse(price, out var d))
                     {
                         foreach (var item in _bookProvider.WherePriceIsEqualOrLowerThan(d))
                         {
@@ -189,15 +286,13 @@ public class UserCommunication : IUserCommunication
             Console.WriteLine("Enter number of pages:");
             var pages = Console.ReadLine();
 
-            
-
             if (!string.IsNullOrEmpty(title)
                 && !string.IsNullOrEmpty(author)
                 && !string.IsNullOrEmpty(edition)
                 && !string.IsNullOrEmpty(price)
                 && !string.IsNullOrEmpty(pages))
             {
-                if (Decimal.TryParse(price, out var priceResult)
+                if (decimal.TryParse(price, out var priceResult)
                     && int.TryParse(pages, out var pagesResult))
                 {
                     switch (edition)

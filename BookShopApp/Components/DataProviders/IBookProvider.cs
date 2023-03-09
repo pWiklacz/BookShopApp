@@ -1,6 +1,6 @@
-﻿using BookShopApp.Entities;
+﻿using BookShopApp.Data.Entities;
 
-namespace BookShopApp.DataProviders;
+namespace BookShopApp.Components.DataProviders;
 
 public interface IBookProvider
 {

@@ -1,4 +1,4 @@
-﻿namespace BookShopApp;
+﻿namespace BookShopApp.Application;
 
 public interface IApp
 {

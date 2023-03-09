@@ -1,6 +1,6 @@
-﻿using BookShopApp.Entities;
+﻿using BookShopApp.Data.Entities;
 
-namespace BookShopApp.Repositories;
+namespace BookShopApp.Data.Repositories;
 
 internal class ListRepository<T> : IRepository<T> where T : class, IEntity, new()
 {
@@ -21,7 +21,7 @@ internal class ListRepository<T> : IRepository<T> where T : class, IEntity, new(
         //Nothing to do
     }
 
-    public T GetById(int id) 
+    public T GetById(int id)
     {
         return _items.Single(item => item.Id == id);
     }
